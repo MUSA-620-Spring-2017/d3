@@ -1,6 +1,6 @@
 ## D3 Examples
 
-[Simple animated circle example](https://bl.ocks.org/galkamax/c19642317ac807fe13a99bbcf2eaaa75) ([code](https://github.com/MUSA-620-Fall-2017/d3/blob/master/circle-example.html))
+[Simple transition / click event example](https://bl.ocks.org/galkamax/c19642317ac807fe13a99bbcf2eaaa75) ([code](https://github.com/MUSA-620-Fall-2017/d3/blob/master/circle-example.html)) -- click the bubble to start the transition
 
 [Animated NYC taxi pickups over 24 hours](https://bl.ocks.org/galkamax/f3ecfeb0b4ebbbec104e87a08dc4806e) ([code](https://github.com/MUSA-620-Fall-2017/d3/blob/master/nyc-taxi-pickups.html))-- This is the D3 version of the map I showed in class. The code can work for any map. Plug in your own geojson file and make a few modifications.
 
