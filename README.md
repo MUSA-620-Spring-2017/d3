@@ -14,8 +14,6 @@
 
 [bl.ocks.org](https://bl.ocks.org/-/about) - lots of D3 examples. Search [Gist](https://gist.github.com/) for examples or search in Google using the site: operator ("site:bl.ocks.org").
 
-[Example]
-
 
 
 ## Simple circle example
