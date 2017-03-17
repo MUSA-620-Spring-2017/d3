@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="//d3js.org/d3.v4.min.js"></script>
+<svg></svg>
+<script>
+    var width = 960;
+    var height = 500;
+    
+    var svg = d3.select("svg") // set the width, height and color of the background
+        .attr("width", width)
+        .attr("height", height)
+        .style("background-color","black");
+    
+    var projection = d3.geoMercator()  // set the map projection
+        .scale(46000).center([-73.9,40.7])  // these values will change depending on the region you want the map to show
+        .translate([width / 2, height / 2]);
+    
+    var path = d3.geoPath()  // create a function to convert your map's coordinates to an svg path
+        .projection(projection);
+    
+    d3.json("nyctaxipickups.geojson", function(error, nyctaxis) {  //load the geojson file
+        if (error) throw error;
+        
+        // **** CREATE THE MAP ****
+        var mymap = svg.selectAll("anystring")  // For these purposes, what goes here is irrelevant
+            .data(nyctaxis.features) // The features from your geojson file
+            .enter().append("path").attr("d", path)
+            .style("fill",function(d){ // set the colors of each feature
+                var pickupsInHour0 = d.properties["hour0"]; // You can reference any of your map's attributes in this way
+                return d3.interpolateViridis(pickupsInHour0/1000000); // Viridis is one of D3's built in color ramps. More here: https://github.com/d3/d3-scale#interpolateViridis
+            });
+        
+        var displayHour = svg.append("text") // display the current hour
+            .attr("x",30)  // position the text box on the screen. Coordinate [0,0] is the upper left corner.
+            .attr("y",30)
+            .style("fill","white")
+            .text("0");
+         
+        // **** ANIMATE THE MAP'S COLORS ACCORDING TO THE HOURLY NUMBER OF PICKUPS ****
+        var hour = 0;
+        setInterval(function(){
+            hour = (hour + 1) % 24;  // increment the hour
+            
+            mymap // change the colors smoothly
+                .transition()
+                .duration(1000)
+                .style("fill",function(d){
+                    var pickupsThisHour = d.properties["hour" + hour];
+                    return d3.interpolateViridis(pickupsThisHour/1000000);
+                });
+            
+            displayHour.text(hour); // display the updated hour
+        },1000); // repeat this function every second
+        
+    });
+</script>
