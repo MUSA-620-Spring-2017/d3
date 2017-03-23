@@ -1,12 +1,12 @@
 # D3
 
-#### Examples
+### Examples
 
 [Simple transition / click event example](https://bl.ocks.org/galkamax/c19642317ac807fe13a99bbcf2eaaa75) ([code](https://github.com/MUSA-620-Fall-2017/d3/blob/master/circle-example.html)) -- click the bubble to start the transition
 
 [Animated NYC taxi pickups over 24 hours](https://bl.ocks.org/galkamax/f3ecfeb0b4ebbbec104e87a08dc4806e) ([code](https://github.com/MUSA-620-Fall-2017/d3/blob/master/nyc-taxi-pickups.html))-- This is the D3 version of the [3D map I showed in class](https://maps.blueshift.io/nyc-hourly-taxi-pickups?embed=1). The code can work for any map. Plug in your own geojson file and make a few modifications.
 
-#### How to run D3 (Javascript) locally from your computer
+### How to run D3 (Javascript) locally from your computer
 
 In general, you can use any standard text editor to write Javascript code. You only have to open it with your browser to run the code. For example, to run the [circle-example.html](https://github.com/MUSA-620-Fall-2017/d3/blob/master/circle-example.html) file in this repo, you only have to download it and open it in Chrome.
 
@@ -19,7 +19,7 @@ The only issue with running Javascript locally is when the Javascript needs to l
 - From the command line, navigate to that directory and enter "python -m SimpleHTTPServer 8000"
 - Now you will be able to run the file by typing this into your browser: http://localhost:8000/nyc-taxi-pickups.html
 
-#### D3 Useful Links
+### D3 Useful Links
 
 [D3 gallery](https://github.com/d3/d3/wiki/Gallery)
 
@@ -29,7 +29,7 @@ The only issue with running Javascript locally is when the Javascript needs to l
 
 
 
-#### Simple circle code example
+### Simple circle code example
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
